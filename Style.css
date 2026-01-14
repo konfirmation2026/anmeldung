@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #fafafa;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hintergrund */
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background img {
+  width: min(80vw, 520px);
+}
+
+/* Sections */
+.section {
+  min-height: 100vh;
+  height: auto; 
+  padding: 64px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro {
+  justify-content: flex-end;
+  padding-bottom: 48px;
+}
+
+/* Scroll-Hinweis */
+.scroll-hint {
+  text-align: center;
+  color: #999;
+  font-family: monospace;
+}
+
+/* Titel */
+.free-title h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Glass Box */
+.glass {
+  width: 100%;
+  max-width: 520px;
+  padding: 32px 24px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.7); /* Etwas deckender für iOS */
+  -webkit-backdrop-filter: blur(16px); /* Präfix für Safari */
+  backdrop-filter: blur(16px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  margin-top: 16px;
+}
+
+.invitation-text p,
+.info-box h2,
+.info-box p,
+.form h2,
+.form p {
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Zitat mit exakt symmetrischen Abständen */
+.quote-text {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: 'Georgia', serif;
+  margin-top: 80px !important;
+  margin-bottom: 80px !important;
+  line-height: 1.4;
+  color: #222;
+}
+
+/* Formular-Anpassung */
+.form {
+  margin-top: 0 !important;
+}
+
+/* Einheitlicher Schatten-Look & iPhone Fix */
+.input-glass input,
+.guest-count input,
+.choices span.shadow-glass {
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.1); /* Dunklerer Rand für Sichtbarkeit */
+  background: rgba(255,255,255,0.8); /* Deckender für iPhone */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  outline: none;
+  color: #222;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px; 
+  transition: all 0.25s ease;
+  
+  /* Wichtig für iPhone */
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 20px;
+}
+
+/* Schwarzer Absende-Button */
+.glass-button.shadow-glass {
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  border: none;
+  background-color: #000000 !important; /* Absolut Schwarz */
+  color: #ffffff !important; /* Absolut Weiß */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px; 
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  
+  /* Wichtig für iPhone */
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Radio-Buttons Grid */
+.choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.choices input {
+  display: none;
+}
+
+.choices span.shadow-glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 64px;
+  padding: 16px 20px;
+}
+
+.choices input:checked + span.shadow-glass {
+  background: #eeeeee; /* Festes Grau statt Transparenz für iOS */
+  border-color: rgba(0,0,0,0.3);
+}
+
+/* Interaktionen */
+.input-glass input:focus {
+  background: #ffffff;
+  border-color: #000;
+}
+
+.glass-button.shadow-glass:hover {
+  background-color: #333333 !important;
+}
+
+.glass-button.shadow-glass:active {
+  transform: scale(0.97);
+}
+
+/* Gäste-Anzeige Logik */
+.guest-count.shadow-glass {
+  display: none;
+  margin-top: 12px;
+}
