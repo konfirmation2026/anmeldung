@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Konfirmation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background">
+  <img src="taube.png" alt="Weiße Taube">
+</div>
+
+<section class="section intro">
+  <div class="scroll-hint" id="scrollHint">
+    <span class="arrow">↓</span>
+    <span class="scroll-text">scrollen</span>
+  </div>
+</section>
+
+<section class="section info-group">
+  <div class="free-title">
+    <h2>Einladung zu meiner Konfirmation</h2>
+  </div>
+
+  <div class="invitation-text glass">
+    <p>
+      Mit großer Freude lade ich euch herzlich zu meiner Konfirmation ein.
+      Dieser besondere Tag markiert einen wichtigen Schritt auf meinem Glaubensweg,
+      den ich gerne gemeinsam mit euch feiern möchte.
+    </p>
+  </div>
+
+  <div class="glass info-box">
+    <h2>Datum & Uhrzeit</h2>
+    <p>
+      Sonntag, 15. März 2026<br>
+      Beginn um 10:00 Uhr
+    </p>
+  </div>
+
+  <div class="glass info-box">
+    <h2>Ort</h2>
+    <p>
+      Reformierte Kirche<br>
+      Marktgasse 9<br>
+      4950 Huttwil
+    </p>
+  </div>
+
+  <div class="quote-text">
+    „Alles ist möglich, dem der glaubt.“<br>
+    <em>Markus 9,23</em>
+  </div>
+
+  <form
+    class="glass form"
+    action="https://formspree.io/f/mojvboly"
+    method="POST"
+  >
+    <h2>Anmeldung</h2>
+    <p>Bitte gib mir kurz Bescheid, ob du dabei sein kannst.</p>
+
+    <div class="input-glass shadow-glass">
+      <input type="text" name="name" placeholder="Dein Name" required>
+    </div>
+
+    <div class="choices">
+      <label>
+        <input type="radio" name="antwort" value="Ich komme" required>
+        <span class="shadow-glass">Ich komme gerne</span>
+      </label>
+
+      <label>
+        <input type="radio" name="antwort" value="Ich komme nicht">
+        <span class="shadow-glass">Ich kann leider nicht kommen</span>
+      </label>
+    </div>
+
+    <div class="guest-count shadow-glass" id="guestCount">
+      <input
+        type="text"
+        name="personen"
+        placeholder="Anzahl Personen"
+        inputmode="numeric"
+        pattern="[1-9]"
+        maxlength="1"
+      >
+    </div>
+
+    <button type="submit" class="glass-button shadow-glass">Antwort senden</button>
+  </form>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
